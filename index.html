@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hello World</title>
+    <style>
+      :root {
+        color-scheme: light;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        min-height: 100vh;
+        display: grid;
+        place-items: center;
+        font-family: "Inter", "Segoe UI", Roboto, Arial, sans-serif;
+        background: linear-gradient(135deg, #1d4ed8 0%, #7c3aed 100%);
+        color: #f8fafc;
+      }
+
+      .card {
+        width: min(92vw, 520px);
+        text-align: center;
+        padding: 2.5rem 2rem;
+        border-radius: 18px;
+        backdrop-filter: blur(8px);
+        background: rgba(255, 255, 255, 0.1);
+        border: 1px solid rgba(255, 255, 255, 0.22);
+        box-shadow: 0 18px 35px rgba(17, 24, 39, 0.35);
+      }
+
+      h1 {
+        margin: 0 0 1.25rem;
+        font-size: clamp(2rem, 5vw, 3rem);
+        line-height: 1.1;
+        letter-spacing: 0.02em;
+      }
+
+      button {
+        border: none;
+        border-radius: 999px;
+        padding: 0.8rem 1.3rem;
+        font-size: 1rem;
+        font-weight: 600;
+        cursor: pointer;
+        color: #1e293b;
+        background: #f8fafc;
+        transition: transform 140ms ease, box-shadow 140ms ease, opacity 140ms ease;
+      }
+
+      button:hover {
+        transform: translateY(-1px);
+        box-shadow: 0 10px 20px rgba(15, 23, 42, 0.28);
+      }
+
+      button:active {
+        transform: translateY(0);
+        opacity: 0.9;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="card">
+      <h1 id="hello-heading">Hello World</h1>
+      <button id="change-btn" type="button">Change Heading</button>
+    </main>
+
+    <script>
+      const heading = document.getElementById("hello-heading");
+      const button = document.getElementById("change-btn");
+
+      button.addEventListener("click", () => {
+        heading.textContent =
+          heading.textContent === "Hello World" ? "Welcome to Modern Web Design" : "Hello World";
+      });
+    </script>
+  </body>
+</html>
